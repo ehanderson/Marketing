@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  link: MyString
+  seconds: 1
+  spots: 1
+
+two:
+  link: MyString
+  seconds: 1
+  spots: 1
