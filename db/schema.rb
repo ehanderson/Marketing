@@ -16,18 +16,25 @@ ActiveRecord::Schema.define(:version => 20140118234838) do
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.string   "facebook_link"
+    t.string   "youtubeteaser_link"
+    t.string   "youtubecommercial_link"
+    t.string   "topsy_link"
     t.integer  "seconds"
     t.integer  "spots"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "checkins", :force => true do |t|
     t.string   "likes"
     t.string   "talking"
     t.integer  "brand_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "checkin_time"
+    t.string   "youtube_teaser"
+    t.string   "youtube_commercial"
+    t.string   "sentiment_score"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end
