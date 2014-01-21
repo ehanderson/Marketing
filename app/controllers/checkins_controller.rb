@@ -1,10 +1,10 @@
 class CheckinsController < ApplicationController
 require 'nokogiri'
-require 'watir'
+# require 'watir'
 require 'typhoeus'
 
   def new
-    browser = Watir::Browser.new
+    # browser = Watir::Browser.new
     @brands = Brand.all
 
     @brands.each do |brand|
@@ -33,29 +33,32 @@ require 'typhoeus'
         end
       end
 
-      topsy_link = brand.topsy_link
-
-        if topsy_link != nil
-          browser.goto topsy_link
-            doc = Nokogiri::HTML.parse(browser.html)
-            sentiment_score = doc.css("span").text.scan(/Tweets(\d+)/).first.first
-        else
-          topsy_link = nil
-        end
-
-      youtubeteaser_link = brand.youtubeteaser_link
-
-        if youtubeteaser_link != nil
-          browser.goto youtubeteaser_link
-          doc = Nokogiri::HTML.parse(browser.html)
-          browser.goto youtubeteaser_link
-          teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
-        else
-          teaser = nil
-        end
           Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
-                          sentiment_score: sentiment_score, checkin_time: Time.now,
-                          youtube_teaser: teaser)
+                        checkin_time: Time.now)
+
+      # topsy_link = brand.topsy_link
+
+      #   if topsy_link != nil
+      #     browser.goto topsy_link
+      #       doc = Nokogiri::HTML.parse(browser.html)
+      #       sentiment_score = doc.css("span").text.scan(/Tweets(\d+)/).first.first
+      #   else
+      #     topsy_link = nil
+      #   end
+
+      # youtubeteaser_link = brand.youtubeteaser_link
+
+      #   if youtubeteaser_link != nil
+      #     browser.goto youtubeteaser_link
+      #     doc = Nokogiri::HTML.parse(browser.html)
+      #     browser.goto youtubeteaser_link
+      #     teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
+      #   else
+      #     teaser = nil
+      #   end
+      #     Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
+      #                     sentiment_score: sentiment_score, checkin_time: Time.now,
+      #                     youtube_teaser: teaser)
        #  puts brand.name
        #  puts likes
        #  puts talking
