@@ -6,7 +6,7 @@ class CheckinsController < ApplicationController
 
   def new
     # browser = Watir::Browser.new
-    @brands = Brand.last(3)
+    @brands = Brand.all
     driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
