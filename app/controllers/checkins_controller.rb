@@ -1,8 +1,8 @@
+class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
 require 'selenium-webdriver'
-class CheckinsController < ApplicationController
 
   def new
     # browser = Watir::Browser.new
