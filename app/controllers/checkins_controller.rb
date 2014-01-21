@@ -2,12 +2,12 @@ class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
-# require 'selenium-webdriver'
+require 'selenium-webdriver'
 
   def new
     # browser = Watir::Browser.new
     @brands = Brand.all
-    # driver = Selenium::WebDriver.for :firefox
+    driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
       facebook_link = brand.facebook_link
