@@ -2,7 +2,7 @@ class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
-require 'selenium-webdriver'
+# require 'selenium-webdriver'
 
   def new
     # browser = Watir::Browser.new
@@ -37,8 +37,8 @@ require 'selenium-webdriver'
       end
 
 
-      driver.navigate.to topsy_link
-      element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+      # driver.navigate.to topsy_link
+      # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
 
           Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
                         sentiment_score: element,
@@ -73,7 +73,7 @@ require 'selenium-webdriver'
        #  puts teaser
       end
     render :complete
-      driver.execute_script "window.onbeforeunload = function(e){};"
-      driver.quit
+      # driver.execute_script "window.onbeforeunload = function(e){};"
+      # driver.quit
   end
 end
