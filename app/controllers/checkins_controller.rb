@@ -38,7 +38,7 @@ require 'selenium-webdriver'
 
 
       driver.navigate.to topsy_link
-      element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+      # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
 
           # Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
           #               # sentiment_score: element,
