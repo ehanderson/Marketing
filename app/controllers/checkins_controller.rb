@@ -1,14 +1,17 @@
-class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
+require 'selenium-webdriver'
+class CheckinsController < ApplicationController
 
   def new
     # browser = Watir::Browser.new
-    @brands = Brand.all
+    @brands = Brand.last(3)
+    driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
       facebook_link = brand.facebook_link
+      topsy_link = brand.topsy_link
 
       if facebook_link != nil
         page = Typhoeus::Request.get(facebook_link, :timeout => 5000)
@@ -33,9 +36,13 @@ require 'typhoeus'
         end
       end
 
-          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
-                        checkin_time: Time.now)
 
+      driver.navigate.to topsy_link
+      element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+
+          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
+                        sentiment_score: element,
+                        checkin_time: Time.now)
       # topsy_link = brand.topsy_link
 
       #   if topsy_link != nil
@@ -65,6 +72,8 @@ require 'typhoeus'
        #  puts sentiment_score
        #  puts teaser
       end
-    render :new
+    render :complete
+      driver.execute_script "window.onbeforeunload = function(e){};"
+      driver.quit
   end
 end

@@ -1,5 +1,5 @@
 
-Brand.create(name: "Bud Light", youtubeteaser_link:"https://www.youtube.com/watch?v=ffXmQhrjWV8", topsy_link:"http://topsy.com/s?q=Bud%20Light&window=d", spots: 3 )
+Brand.create(name: "Bud Light", youtubeteaser_link:zip(enums) { |row|  }, topsy_link:"http://topsy.com/s?q=Bud%20Light&window=d", spots: 3 )
 Brand.create(name: "Budweiser", topsy_link:"http://topsy.com/s?q=Budweiser&window=d", spots: 1)
 Brand.create(name: "Audi", topsy_link:"http://topsy.com/s?q=Audi&window=d",facebook_link: "https://www.facebook.com/audi", spots: 1, seconds: 60)
 Brand.create(name: "Axe", topsy_link:"http://topsy.com/s?q=Axe&window=d",facebook_link: "https://www.facebook.com/Axe", spots: 1, seconds: 30)
