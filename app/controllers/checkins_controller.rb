@@ -7,11 +7,11 @@ require 'typhoeus'
   def new
     # browser = Watir::Browser.new
     @brands = Brand.all
-    driver = Selenium::WebDriver.for :firefox
+    # driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
       facebook_link = brand.facebook_link
-      topsy_link = brand.topsy_link
+      # topsy_link = brand.topsy_link
 
       if facebook_link != nil
         page = Typhoeus::Request.get(facebook_link, :timeout => 5000)
