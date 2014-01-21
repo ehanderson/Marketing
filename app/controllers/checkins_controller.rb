@@ -40,7 +40,7 @@ require 'typhoeus'
       # driver.navigate.to topsy_link
       # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
 
-          Checkin.create(brand_id: brand.id, talking: talking, likes: likes
+          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
                         # sentiment_score: element,
                         checkin_time: Time.now)
       # topsy_link = brand.topsy_link
@@ -72,7 +72,7 @@ require 'typhoeus'
        #  puts sentiment_score
        #  puts teaser
       end
-    render :complete
+    render :new
       # driver.execute_script "window.onbeforeunload = function(e){};"
       # driver.quit
   end
