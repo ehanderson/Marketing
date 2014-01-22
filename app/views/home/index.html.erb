@@ -17,8 +17,15 @@
     <td><%=brand.checkins.last.created_at%></td>
     <td><%=brand.checkins.last.likes%></td>
     <td><%=brand.checkins.last.talking%></td>
-
+    <td><%=brand.checkins.last.sentiment_score%></td>
+    <td><%=brand.checkins.last.youtube_teaser%></td>
   </tr>
   <%end%>
 
 </table>
+
+<!-- https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyCiQ99gDg-fA7T3MAaVgtpJ187PmXI0xbc&part=snippet,statistics
+
+otter- api key:
+09C43A9B270A470B8EB8F2946A9369F3
+ -->

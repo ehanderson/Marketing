@@ -2,16 +2,17 @@ class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
-require 'selenium-webdriver'
+# require 'selenium-webdriver'
 
   def new
     # browser = Watir::Browser.new
     @brands = Brand.all
-    driver = Selenium::WebDriver::Firefox::Binary.path = "http://topsy.com/s?q=Pistachios&window=d"
+
+    # driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
       facebook_link = brand.facebook_link
-      # topsy_link = brand.topsy_link
+      topsy_link = brand.topsy_link
 
       if facebook_link != nil
         page = Typhoeus::Request.get(facebook_link, :timeout => 5000)
@@ -40,9 +41,16 @@ require 'selenium-webdriver'
       # driver.navigate.to topsy_link
       # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
 
-          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
-                        # sentiment_score: element,
-                        checkin_time: Time.now)
+          # Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
+          #               # sentiment_score: element,
+          #               checkin_time: Time.now)
+
+
+    # response = HTTParty.get(topsy_link)
+    # body = response.body
+    # matched_data = body.match(/("request".*[^);])/).to_s
+    # hash = JSON.parse(matched_data)
+    # hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
       # topsy_link = brand.topsy_link
 
       #   if topsy_link != nil
@@ -52,20 +60,23 @@ require 'selenium-webdriver'
       #   else
       #     topsy_link = nil
       #   end
+      youtubeteaser_link = brand.youtubeteaser_link
+        page = Typhoeus::Request.get(youtubeteaser_link, :timeout => 5000)
+        doc = Nokogiri::HTML.parse(page.body)
 
-      # youtubeteaser_link = brand.youtubeteaser_link
-
-      #   if youtubeteaser_link != nil
-      #     browser.goto youtubeteaser_link
-      #     doc = Nokogiri::HTML.parse(browser.html)
-      #     browser.goto youtubeteaser_link
-      #     teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
-      #   else
-      #     teaser = nil
-      #   end
-      #     Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
-      #                     sentiment_score: sentiment_score, checkin_time: Time.now,
-      #                     youtube_teaser: teaser)
+        if youtubeteaser_link != nil
+          # browser.goto youtubeteaser_link
+          # doc = Nokogiri::HTML.parse(browser.html)
+          # browser.goto youtubeteaser_link
+          teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
+        # puts teaser
+        # puts likes
+        else
+          teaser = nil
+        end
+          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
+                         checkin_time: Time.now,
+                          youtube_teaser: teaser)
        #  puts brand.name
        #  puts likes
        #  puts talking
