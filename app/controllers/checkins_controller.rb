@@ -7,7 +7,7 @@ require 'selenium-webdriver'
   def new
     # browser = Watir::Browser.new
     @brands = Brand.all
-    driver = Selenium::WebDriver::Firefox::Profile.new
+    driver = Selenium::WebDriver.for :firefox
 
     @brands.each do |brand|
       facebook_link = brand.facebook_link
@@ -37,12 +37,12 @@ require 'selenium-webdriver'
       end
 
 
-      driver.navigate.to topsy_link
+      # driver.navigate.to topsy_link
       # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
 
-          # Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
-          #               # sentiment_score: element,
-          #               checkin_time: Time.now)
+          Checkin.create(brand_id: brand.id, talking: talking, likes: likes,
+                        # sentiment_score: element,
+                        checkin_time: Time.now)
       # topsy_link = brand.topsy_link
 
       #   if topsy_link != nil
