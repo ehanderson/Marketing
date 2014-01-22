@@ -16,7 +16,7 @@ Brand.create(name: "Hyundai",  topsy_link:"http://topsy.com/s?q=Hyundai&window=d
 
 Brand.create(name: "Intuit",  topsy_link:"http://topsy.com/s?q=Intuit&window=d",facebook_link: "https://www.facebook.com/intuit", spots: 1, seconds:30)
 Brand.create(name: "Turbotax",  topsy_link:"http://topsy.com/s?q=TurboTax&window=d",facebook_link: "https://www.facebook.com/turbotax", spots: 1, seconds:60)
-Brand.create(name: "Jaguar", youtubeteaser_link:"http://youtu.be/RWBaF077yWI",  topsy_link:"http://topsy.com/s?q=Jaguar&window=d",facebook_link: "https://www.facebook.com/Jaguar", spots: 1, seconds:60)
+Brand.create(name: "Jaguar", youtubeteaser_link:"http://youtube/RWBaF077yWI",  topsy_link:"http://topsy.com/s?q=Jaguar&window=d",facebook_link: "https://www.facebook.com/Jaguar", spots: 1, seconds:60)
 Brand.create(name: "Kiamotorsworldwide", topsy_link:"http://topsy.com/s?q=Kia&window=d",facebook_link: "https://www.facebook.com/Kiamotorsworldwide")
 Brand.create(name: "M&Ms", topsy_link:"http://topsy.com/s?q=M%26M&window=d",facebook_link: "https://www.facebook.com/mms", spots: 1, seconds:30)
 
@@ -24,8 +24,8 @@ Brand.create(name: "M&Ms", topsy_link:"http://topsy.com/s?q=M%26M&window=d",face
 Brand.create(name: "Dannon", topsy_link:"http://topsy.com/s?q=Okios&window=d",facebook_link: "https://www.facebook.com/dannon", spots: 1, seconds:30)
 Brand.create(name: "AgeofextinctionMovie", topsy_link:"http://topsy.com/s?q=Transformers&window=d",facebook_link: "https://www.facebook.com/AgeofextinctionMovie", spots: 1, seconds:30)
 Brand.create(name: "PepsiUS", topsy_link:"http://topsy.com/s?q=Pepsi&window=d",facebook_link: "https://www.facebook.com/PepsiUS", spots: 2, seconds:60)
-Brand.create(name: "SodaStream", youtubeteaser_link:"http://youtu.be/IxB_gduT1wM", topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
-Brand.create(name: "Squarespace", youtubeteaser_link:"http://youtu.be/ksXQG-rLjZo", topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
+Brand.create(name: "SodaStream", youtubeteaser_link:"http://youtube/IxB_gduT1wM", topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
+Brand.create(name: "Squarespace", youtubeteaser_link:"http://youtube/ksXQG-rLjZo", topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
 Brand.create(name: "Toyota", topsy_link:"http://topsy.com/s?q=Toyota&window=d",facebook_link: "https://www.facebook.com/toyota", spots: 1, seconds:60)
 Brand.create(name: "Volkswagen", topsy_link:"http://topsy.com/s?q=Volkswagen&window=d",facebook_link: "https://www.facebook.com/volkswagen", spots: 1, seconds:60)
 Brand.create(name: "Wonderfulpistachios", topsy_link:"http://topsy.com/s?q=Pistachios&window=d",facebook_link: "https://www.facebook.com/wonderfulpistachios", spots: 2, seconds:30)
