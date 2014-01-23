@@ -21,7 +21,7 @@ class CheckinsController < ApplicationController
 
   def new
     # driver = Selenium::WebDriver.for :firefox
-    @brands = Brand.last(5)
+    @brands = Brand.all
     @brands.each do |brand|
       facebook_link = brand.facebook_link
       youtubeteaser_link = brand.youtubeteaser_link
