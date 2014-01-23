@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// $(document).ready(function(){
+
+//   $.get("/checkins/new", function(e){
+//     console.log(e);
+//     setTimeout(function() {}, 10000)
+
+//     window.location.replace('/');
+//   });
+// })
