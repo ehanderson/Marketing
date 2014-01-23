@@ -18,43 +18,64 @@ class Checkin < ActiveRecord::Base
     @checkins = Checkin.order(:brand_id)
   end
 
+  def self.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand_id)
+    self.youtubeteaser(youtubeteaser_link)
+    self.facebook(facebook_link, brand_id)
+    # self.topsy(driver, topsy_link)
+    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+    #                 youtube_teaser: @teaser, sentiment_score: @sentiment_score,
+    #                 checkin_time: Time.now)
+        Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+                    youtube_teaser: @teaser,
+                    checkin_time: Time.now)
+  end
+
+  # def self.topsy(driver, topsy_link)
+  #  if topsy_link != nil
+  #     driver.navigate.to topsy_link
+  #     @sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+  #   else
+  #     @sentiment_score = nil
+  #   end
+  #   @sentiment_score
+  # end
+
   def self.youtubeteaser(youtubeteaser_link)
     if youtubeteaser_link != nil
       page = Typhoeus::Request.get(youtubeteaser_link, :timeout => 5000)
       doc = Nokogiri::HTML.parse(page.body)
-      teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
-      puts teaser
+      @teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
+    else
+     @teaser = nil
     end
   end
 
-  def self.facebook(facebook_link)
+  def self.facebook(facebook_link, brand_id)
     if facebook_link != nil
-      @page = Typhoeus::Request.get(facebook_link, :timeout => 5000)
-      @doc = Nokogiri::HTML.parse(@page.body)
-      self.likes(facebook_link, @doc)
-      self.talking(facebook_link, @doc)
+      page = Typhoeus::Request.get(facebook_link, :timeout => 5000)
+      doc = Nokogiri::HTML.parse(page.body)
+      self.likes(doc, brand_id)
+      self.talking(doc)
     end
   end
 
-  def self.likes(facebook_link, doc)
+  def self.likes(doc, brand_id)
     likes = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W\d+\W+\d+\W+)likes/)
     if likes.empty?
       likes = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+\d+\W+)likes/)
     end
-    likes = likes.first.first.gsub(/[^0-9]/, "")
+      @likes = likes.first.first.gsub(/[^0-9]/, "")
   end
 
-  def self.talking(facebook_link, doc)
+  def self.talking(doc)
     talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+\d+\W+\d+\W+)talking/)
     if talking.empty?
       talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+\d+\W+)talking/)
     end
     if talking.empty?
       talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+)talking/).first.first.gsub(/[^0-9]/, "")
-    else
-      talking = talking.first.first.gsub(/[^0-9]/, "")
     end
-    talking
+    @talking = talking.first.first.gsub(/[^0-9]/, "")
   end
 
 end

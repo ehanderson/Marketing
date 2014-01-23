@@ -1,15 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-<<<<<<< HEAD
 require 'csv'
-=======
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
-# require 'selenium-webdriver'
+require 'selenium-webdriver'
 
->>>>>>> 4542cf827ef86e0e095864d734eeaf78949b7c0d
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
