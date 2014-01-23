@@ -1,4 +1,15 @@
 <%=link_to "new checkin task", new_checkin_path%>
+<%=link_to "view brand data", show_brand_data_path%>
+<%=link_to "view checkin data", show_checkin_data_path%>
+
+<p> Download:
+  <p><strong>Brand Data</strong></p>
+  <%= link_to "CSV", brand_data_path(format: "csv") %>
+  <%= link_to "Excel", brand_data_path(format: "xls") %>
+  <p><strong>Checkin Data:</strong></p>
+  <%= link_to "CSV", checkin_data_path(format: "csv") %>
+  <%= link_to "Excel", checkin_data_path(format: "xls") %>
+</p>
 
 <table>
   <tr>
@@ -10,17 +21,6 @@
     <td>YouTube Teaser</td>
 
   </tr>
-  <% @brands.each do |brand|%>
-  <tr>
-    <td><%=brand.name%></td>
-
-    <td><%=brand.checkins.last.created_at%></td>
-    <td><%=brand.checkins.last.likes%></td>
-    <td><%=brand.checkins.last.talking%></td>
-    <td><%=brand.checkins.last.sentiment_score%></td>
-    <td><%=brand.checkins.last.youtube_teaser%></td>
-  </tr>
-  <%end%>
 
 </table>
 

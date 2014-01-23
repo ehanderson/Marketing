@@ -1,6 +1,13 @@
 Marketing::Application.routes.draw do
  root to: "home#index"
 
+ get 'brand_data', to: 'brands#data', as: :brand_data
+ get 'checkin_data', to: 'checkins#data', as: :checkin_data
+ 
+ get 'show_brand_data', to: 'brands#show_all', as: :show_brand_data
+ get 'show_checkin_data', to: 'checkins#show_all', as: :show_checkin_data
+
+ resources :brands
  resources :checkins
   # The priority is based upon order of creation:
   # first created -> highest priority.

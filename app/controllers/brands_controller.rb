@@ -1,3 +1,16 @@
 class BrandsController < ApplicationController
 
+  def data
+    @brands = Brand.order(:name)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @brands.to_csv }
+      format.xls { send_data @brands.to_csv(col_sep: "\t") }
+    end
+  end
+
+  def show_all
+    @brands = Brand.order(:name)
+  end
+
 end

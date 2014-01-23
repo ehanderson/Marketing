@@ -1,8 +1,22 @@
-class CheckinsController < ApplicationController
 require 'nokogiri'
 # require 'watir'
 require 'typhoeus'
 # require 'selenium-webdriver'
+
+class CheckinsController < ApplicationController
+
+  def show_all
+    @brands = Brand.order(:name)
+  end
+
+  def data
+    @checkins = Checkin.order(:brand_id)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @checkins.to_csv }
+      format.xls { send_data @checkins.to_csv(col_sep: "\t") }
+    end
+  end
 
   def new
     # browser = Watir::Browser.new
@@ -87,4 +101,5 @@ require 'typhoeus'
       # driver.execute_script "window.onbeforeunload = function(e){};"
       # driver.quit
   end
+
 end
