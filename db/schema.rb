@@ -41,4 +41,14 @@ ActiveRecord::Schema.define(:version => 20140125183145) do
     t.string   "youtube_commercial_down"
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
 end
