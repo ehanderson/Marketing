@@ -12,10 +12,16 @@
  *= require_tree .
  */
 
+
 tbody tr:last-child td {
     border-bottom: 4px solid black;
 }
 
 .downloads p{
   display: inline;
+}
+
+#table-header {
+  background: #D0D0D0;
+
 }

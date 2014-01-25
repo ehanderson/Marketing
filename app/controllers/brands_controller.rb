@@ -13,4 +13,11 @@ class BrandsController < ApplicationController
     @brands = Brand.order(:name)
   end
 
+  def destroy
+    brand = Brand.find(params[:id])
+    brand.checkins.clear
+    brand.delete
+    redirect_to :show_brand_data
+  end
+
 end

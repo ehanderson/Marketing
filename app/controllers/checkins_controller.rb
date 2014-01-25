@@ -14,9 +14,9 @@ class CheckinsController < ApplicationController
   end
 
   def destroy
-    @brand = Brand.find(params[:id])
-    @brand.destroy
-    render :new
+    checkin = Checkin.find(params[:id])
+    checkin.destroy
+    redirect_to :show_checkin_data
   end
 
   def new
