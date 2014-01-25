@@ -36,8 +36,8 @@
       <td><%=brand.checkins.last.talking%></td>
       <td><%=brand.checkins.last.sentiment_score%></td>
       <td><%=brand.checkins.last.youtube_teaser%></td>
-      <td><%=brand.checkins.last.youtube_teaser_up%></td>
-      <td><%=brand.checkins.last.youtube_teaser_down%></td>
+      <td><%=brand.checkins.last.youtube_teaser_up || nil%></td>
+      <td><%=brand.checkins.last.youtube_teaser_down || nil%></td>
     </tr>
     <%end%>
   </tbody>
@@ -50,8 +50,8 @@
       <td><%=brand.checkins[-2].talking%></td>
       <td><%=brand.checkins[-2].sentiment_score%></td>
       <td><%=brand.checkins[-2].youtube_teaser%></td>
-      <td><%=brand.checkins[-2].youtube_teaser_up%></td>
-      <td><%=brand.checkins[-2].youtube_teaser_down%></td>
+      <td><%=brand.checkins[-2].youtube_teaser_up || nil %></td>
+      <td><%=brand.checkins[-2].youtube_teaser_down || nil %></td>
     </tr>
     <%end%>
   </tbody>
