@@ -15,3 +15,31 @@
 #table-header {
   background: #D0D0D0;
 }
+
+#user-nav {
+  background-color: gray;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 25%;
+  position: relative;
+}
+
+#fb-link {
+  position: absolute;
+  top: 33%;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+#fb-link a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+#fb-link a:hover {
+  font-weight: bold;
+}

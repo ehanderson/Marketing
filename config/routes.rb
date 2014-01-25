@@ -7,6 +7,10 @@ Marketing::Application.routes.draw do
  get 'show_brand_data', to: 'brands#show_all', as: :show_brand_data
  get 'show_checkin_data', to: 'checkins#show_all', as: :show_checkin_data
 
+ match 'auth/:provider/callback', to: 'sessions#create'
+ match 'auth/failure', to: redirect('/')
+ match 'signout', to: 'sessions#destroy', as: 'signout'
+
  resources :brands
  resources :checkins
   # The priority is based upon order of creation:
