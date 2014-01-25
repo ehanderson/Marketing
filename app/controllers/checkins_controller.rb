@@ -21,7 +21,7 @@ class CheckinsController < ApplicationController
 
   def new
     driver = Selenium::WebDriver.for :firefox
-    @brands = Brand.all
+    @brands = Brand.first(2)
     checkin = Time.now
 
     @brands.each do |brand|
@@ -30,7 +30,7 @@ class CheckinsController < ApplicationController
       topsy_link = brand.topsy_link
       Checkin.data_lookup(driver, topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
     end
-    render :new
+    redirect_to root_path
       driver.execute_script "window.onbeforeunload = function(e){};"
       driver.quit
   end
