@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def index
 
-
+    @brands = Brand.all
 
        # driver.navigate.to topsy_link
       # element = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")

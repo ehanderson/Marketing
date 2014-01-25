@@ -32,6 +32,9 @@ GEM
     builder (3.0.4)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    clockwork (0.7.0)
+      activesupport
+      tzinfo (~> 0.3.35)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -133,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clockwork
   coffee-rails (~> 3.2.1)
   jquery-rails
   nokogiri

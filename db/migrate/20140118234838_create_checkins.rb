@@ -8,8 +8,8 @@ class CreateCheckins < ActiveRecord::Migration
       t.string :youtube_teaser
       t.string :youtube_commercial
       t.string :sentiment_score
-
       t.timestamps
     end
   end
+
 end
