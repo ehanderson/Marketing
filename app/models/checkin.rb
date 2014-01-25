@@ -24,10 +24,10 @@ class Checkin < ActiveRecord::Base
     self.youtubeteaser(youtubeteaser_link)
     self.facebook(facebook_link, brand_id)
     self.topsy(driver, topsy_link)
-    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-    #                 youtube_teaser: @teaser, sentiment_score: @sentiment_score,
-    #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
-    #                 checkin_time: Time.now)
+    Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+                    youtube_teaser: @teaser, sentiment_score: @sentiment_score,
+                    youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+                    checkin_time: Time.now)
 
         # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
         #             youtube_teaser: @teaser,
