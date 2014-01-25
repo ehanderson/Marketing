@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+tbody tr:last-child td {
+    border-bottom: 4px solid black;
+}
+
+.downloads p{
+  display: inline;
+}
