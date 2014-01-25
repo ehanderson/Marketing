@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+#table-header {
+  background: #D0D0D0;
+}

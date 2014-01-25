@@ -1,3 +1,21 @@
 <p>Sup</p>
 
-<%= @checkins %>
+<table id="table-bro">
+  <tr id="table-header">
+  <% Checkin.column_names.each do |col| %>
+    <th><%= col %></th>
+  <% end %>
+  </tr>
+
+  <% if @checkins %>
+    <tr >
+    <% @checkins.each do |checkin| %>
+      <% Checkin.column_names.each do |col| %>
+        <td><%= checkin.attributes.values_at(col) %></td>
+      <% end %>
+      <td><%= button_to "delete", brand, :method => :delete %></td>
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>

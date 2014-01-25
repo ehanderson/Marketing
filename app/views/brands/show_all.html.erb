@@ -1,3 +1,21 @@
 <p>Sup</p>
 
-<%= @brands %>
+<table id="table-bro">
+  <tr id="table-header">
+  <% Brand.column_names.each do |col| %>
+    <th><%= col %></th>
+  <% end %>
+  </tr>
+
+  <% if @brands %>
+    <tr >
+    <% @brands.each do |brand| %>
+      <% Brand.column_names.each do |col| %>
+        <td><%= brand.attributes.values_at(col) %></td>
+      <% end %>
+        <td><%= button_to "delete", brand, :method => :delete %></td>
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>
