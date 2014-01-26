@@ -8,6 +8,7 @@ gem 'clockwork'
 gem 'pg'
 gem 'nokogiri'
 gem 'watir'
+gem 'httparty'
 gem 'selenium-webdriver'
 # gem 'mechanize'
 # gem 'poltergeist'
@@ -15,7 +16,7 @@ gem 'typhoeus'
 # gem 'open-uri'
 # Gems used only for assets and not required
 # in production environments by default.
-
+gem 'omniauth'
 gem 'omniauth-facebook'
 
 group :assets do

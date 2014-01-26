@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 require 'pry'
+=======
+>>>>>>> df4e17756b72fe1269a1b8d109530a4a1b2d08a3
 
 class Checkin < ActiveRecord::Base
   attr_accessible :brand_id, :likes, :talking, :checkin_time,
@@ -22,14 +25,11 @@ class Checkin < ActiveRecord::Base
     @checkins = Checkin.order(:brand_id)
   end
 
-  def self.topsy(driver, topsy_link)
-   if topsy_link != nil
-      driver.navigate.to topsy_link
-      sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
-    else
-      sentiment_score = nil
-    end
-    sentiment_score
+  def self.topsy(topsy_link)
+    response = HTTParty.get(topsy_link).body
+    matched_data = response.match(/({"request".*}[^);])/).to_s
+    hash = JSON.parse(matched_data)
+    sentiment_score = hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
   end
 
   def self.youtubeteaser(youtubeteaser_link)
@@ -37,8 +37,8 @@ class Checkin < ActiveRecord::Base
     if youtubeteaser_link != nil
       page = Typhoeus::Request.get(youtubeteaser_link, :timeout => 5000)
       doc = Nokogiri::HTML.parse(page.body)
-      teaser_up = doc.css('.likes-count').text
-      teaser_down = doc.css('.dislikes-count').text
+      teaser_up = doc.css('.likes-count').text.gsub(/[^0-9]/, "")
+      teaser_down = doc.css('.dislikes-count').text.gsub(/[^0-9]/, "")
       teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
     else
       teaser = nil
