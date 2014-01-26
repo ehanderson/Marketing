@@ -1,7 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :this_task => :environment do
   puts "Running checkins..."
-  curl -L -s http://localhost:3000/new/?refresh
+  # curl -L -s http://localhost:3000/new/?refresh
   # @brands = Brand.first(2)
   #   checkin = Time.now
 
