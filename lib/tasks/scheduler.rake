@@ -1,6 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :this_task => :environment do
   puts "Running checkins..."
+  Checkin.perform
   @brands = Brand.all
     checkin = Time.now
 

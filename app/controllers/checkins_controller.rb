@@ -51,23 +51,22 @@ class CheckinsController < ApplicationController
       # driver.quit
   end
 
-end
 
-  # def perform
-  #   # driver = Selenium::WebDriver.for :firefox
-  #   @brands = Brand.all
-  #   checkin = Time.now
+  def perform
+    # driver = Selenium::WebDriver.for :firefox
+    @brands = Brand.all
+    checkin = Time.now
 
-  #   @brands.each do |brand|
-  #     facebook_link = brand.facebook_link
-  #     youtubeteaser_link = brand.youtubeteaser_link
-  #     topsy_link = brand.topsy_link
-  #     Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
-  #   end
-  #   # render :new
-  #     # driver.execute_script "window.onbeforeunload = function(e){};"
-  #     # driver.quit
-  # end
+    @brands.each do |brand|
+      facebook_link = brand.facebook_link
+      youtubeteaser_link = brand.youtubeteaser_link
+      topsy_link = brand.topsy_link
+      Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
+    end
+    # render :new
+      # driver.execute_script "window.onbeforeunload = function(e){};"
+      # driver.quit
+  end
 
 end
 
