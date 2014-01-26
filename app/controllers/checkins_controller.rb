@@ -41,6 +41,7 @@ class CheckinsController < ApplicationController
     @brands = []
     @brands << Brand.find_by_name('Axe')
     @brands << Brand.find_by_name('Audi')
+    @brands << Brand.find_by_name('Budweiser')
      @brands.each do |brand|
     puts  brand.name
     end
