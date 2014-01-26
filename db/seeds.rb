@@ -39,7 +39,7 @@
 # ,facebook_link: "https://www.facebook.com/BudweiserUSA",
 # youtubeteaser_link:"", youtubecommercial_link: "",
 
-Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
-Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
-Brand.find(53).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=Mzio0qhdxZY")
-Brand.find(27).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=oKAG7UJ-NWk")
+# Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
+# Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
+Brand.find(28).update_attribute(:youtubeteaser_link, "https://www.facebook.com/BudLight")
+Brand.find(2).update_attribute(:youtubeteaser_link, "https://www.facebook.com/BudweiserUSA")
