@@ -2,14 +2,20 @@
 // var fs = require('fs')
 
 var casper = require('casper').create({
-  // verbose: true,
-  // logLevel: 'debug'
+  verbose: true,
+  logLevel: 'debug'
 });
 
 // var link = 'http://topsy.com/s?q=Heinz%20Ketchup&window=d'
-var link = "http://www.dickssportinggoods.com/family/index.jsp?fbn=Brand%7CThe+North+Face+&fbc=1&categoryId=13275676&lmdn=Brand&f=Brand%2F2960%2F&pg=1"
+var link = "http://topsy.com/s?q=%22H%26M%22&window=d"
 
-casper.start(link, function(){
+casper.start(link, function() {
+      this.wait(5000, function() {
+      this.echo("I've waited for a second.");
+  var words = this.evaluate(function(){
+      return __utils__.getElementsByXPath('//*[@id="module-searchsummary"]/div[1]/div[3]/span');
+      this.echo(this.getHTML());
+    });
 // // });
 // // casper.thenOpen(link);
 //   // this.waitForResource('.content', function(){
@@ -17,11 +23,13 @@ casper.start(link, function(){
 //   // fs.write('topsy.html', this.getHTML('span .sentiment-score'))
 // // casper.then(function() {
 //   // casper.options.waitTimeout = 32000;
-  // var words = this.evaluate(function(){
 //     // return document;
-      // return __utils__.getElementsByXPath('//*[@id="module-searchsummary"]/div[1]/div[3]/span');
     // });
-  this.echo(this.getTitle());
+// casper.options.onResourceReveived = function(C, response){
+//   this.echo(words);
+// });
+// });
+
   // utils.dump(words)
 //   // });
 // });
@@ -39,7 +47,7 @@ casper.start(link, function(){
 
 
 
-// casper.run()
+casper.run()
 // // var casper = require('casper').create();
 // // var link = 'http://topsy.com/s?q=Heinz%20Ketchup&window=d.json?q=casperjs'
 
