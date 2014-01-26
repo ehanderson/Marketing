@@ -11,5 +11,5 @@ task :this_task => :environment do
       topsy_link = brand.topsy_link
       Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
   puts "done."
-    # end
+    end
 end
