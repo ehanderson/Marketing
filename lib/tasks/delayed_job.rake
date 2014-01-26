@@ -1,1 +1,1 @@
-require 'delayed/tasks'
+
