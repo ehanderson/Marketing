@@ -22,14 +22,14 @@ class Checkin < ActiveRecord::Base
   end
 
   def self.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand_id, checkin)
-    # self.youtubeteaser(youtubeteaser_link)
-    # self.facebook(facebook_link, brand_id)
+    self.youtubeteaser(youtubeteaser_link)
+    self.facebook(facebook_link, brand_id)
     self.topsy(topsy_link)
-#     Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-#                     youtube_teaser: @teaser, sentiment_score: @sentiment_score,
-#                     youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
-#                     checkin_time: checkin)
-# # puts @likes
+    Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+                    youtube_teaser: @teaser, sentiment_score: @sentiment_score,
+                    youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+                    checkin_time: checkin)
+
 #     Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
 #                     youtube_teaser: @teaser,
 #                     youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
@@ -37,23 +37,11 @@ class Checkin < ActiveRecord::Base
   end
 
 
-# budlightURL  = "http://otter.topsy.com/sentiment.js?callback=jQuery183020111811463721097_1390424113194&q=Bud+Light&mintime=1390337735&call_timestamp=1390424135360&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390424136116"
-# budweiserURL = "http://otter.topsy.com/sentiment.js?callback=jQuery183030369035387411714_1390415434804&q=Budweiser&call_timestamp=1390415435061&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390415435405"
-
-
 def self.topsy(topsy_link)
   response = HTTParty.get(topsy_link).body
-  # puts "emily is trying to see you matched data"
-  matched_data = response.match(/({"request".*[^);])/)
-    # puts matched_data
-    puts response
-    # puts "you should between these"
-  # hash = JSON.parse(matched_data)
- # @sentiment_score = hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
- # puts @sentiment_score
-# puts news_search(budlightURL)
-# puts news_search(budweiserURL)
-
+  matched_data = response.match(/({"request".*}[^);])/).to_s
+  hash = JSON.parse(matched_data)
+ @sentiment_score = hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
 
 end
 

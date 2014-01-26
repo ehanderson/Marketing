@@ -38,7 +38,13 @@ class CheckinsController < ApplicationController
   def new
     # sleep(5700)
     # driver = Selenium::WebDriver.for :firefox
-    @brands = Brand.first(2)
+    @brands = []
+    @brands << Brand.find_by_name('Axe')
+    @brands << Brand.find_by_name('Audi')
+     @brands.each do |brand|
+    puts  brand.name
+    end
+
     checkin = Time.now
 
     @brands.each do |brand|
