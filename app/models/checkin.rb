@@ -67,6 +67,7 @@ class Checkin < ActiveRecord::Base
   def self.get_facebook_data(user_oauth_token, brand)
     collection = {}
     brand.delete!(' ')
+    brand.delete!('&')
     graph = Koala::Facebook::API.new(user_oauth_token)
     info = graph.get_object(brand)
     collection[:likes] = info["likes"]
