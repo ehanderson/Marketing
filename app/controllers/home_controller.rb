@@ -7,7 +7,8 @@ class HomeController < ApplicationController
 #   end
 
   def index
-    @brands = [Brand.find_by_name('Axe'), Brand.find_by_name('Audi'), Brand.find_by_name('Bud Light')]
+    @brands = Brand.all
+    # @brands = [Brand.find_by_name('Axe'), Brand.find_by_name('Audi'), Brand.find_by_name('Bud Light')]
     render :index
   end
 
