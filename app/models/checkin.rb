@@ -29,10 +29,10 @@ class Checkin < ActiveRecord::Base
     #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
     #                 checkin_time: checkin)
 
-    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-    #                 youtube_teaser: @teaser,
-    #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
-    #                 checkin_time: checkin)
+    Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+                    youtube_teaser: @teaser,
+                    youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+                    checkin_time: checkin)
   end
 
   # def self.topsy(driver, topsy_link)

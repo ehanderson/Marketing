@@ -37,7 +37,7 @@ class CheckinsController < ApplicationController
 
   def new
     # driver = Selenium::WebDriver.for :firefox
-    @brands = Brand.first(3)
+    @brands = Brand.all
     checkin = Time.now
 
     @brands.each do |brand|
