@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-require 'pry'
-=======
->>>>>>> df4e17756b72fe1269a1b8d109530a4a1b2d08a3
-
 class Checkin < ActiveRecord::Base
   attr_accessible :brand_id, :likes, :talking, :checkin_time,
                   :youtube_teaser, :youtube_commercial,
