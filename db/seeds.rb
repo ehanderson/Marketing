@@ -26,21 +26,21 @@
 
 
 # Brand.create(name: "Dannon",
-  topsy_link:"http://topsy.com/s?q=Okios&window=d",facebook_link: "https://www.facebook.com/dannon", spots: 1, seconds:30)
-# Brand.create(name: "AgeofextinctionMovie",
-  topsy_link:"http://topsy.com/s?q=Transformers&window=d",facebook_link: "https://www.facebook.com/AgeofextinctionMovie", spots: 1, seconds:30)
-# Brand.create(name: "PepsiUS",
-  topsy_link:"http://topsy.com/s?q=Pepsi&window=d",facebook_link: "https://www.facebook.com/PepsiUS", spots: 2, seconds:60)
-# Brand.create(name: "SodaStream", youtubeteaser_link:"https://www.youtube.com/watch?v=IxB_gduT1wM",
-  topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
-# Brand.create(name: "Squarespace", youtubeteaser_link:"https://www.youtube.com/watch?v=ksXQG-rLjZo",
-  topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
-# Brand.create(name: "Toyota",
-  topsy_link:"http://topsy.com/s?q=Toyota&window=d",facebook_link: "https://www.facebook.com/toyota", spots: 1, seconds:60)
-# Brand.create(name: "Volkswagen",
-  topsy_link:"http://topsy.com/s?q=Volkswagen&window=d",facebook_link: "https://www.facebook.com/volkswagen", spots: 1, seconds:60)
-# Brand.create(name: "Wonderfulpistachios",
-  topsy_link:"http://topsy.com/s?q=Pistachios&window=d",facebook_link: "https://www.facebook.com/wonderfulpistachios", spots: 2, seconds:30)
+#   topsy_link:"http://topsy.com/s?q=Okios&window=d",facebook_link: "https://www.facebook.com/dannon", spots: 1, seconds:30)
+# # Brand.create(name: "AgeofextinctionMovie",
+#   topsy_link:"http://topsy.com/s?q=Transformers&window=d",facebook_link: "https://www.facebook.com/AgeofextinctionMovie", spots: 1, seconds:30)
+# # Brand.create(name: "PepsiUS",
+#   topsy_link:"http://topsy.com/s?q=Pepsi&window=d",facebook_link: "https://www.facebook.com/PepsiUS", spots: 2, seconds:60)
+# # Brand.create(name: "SodaStream", youtubeteaser_link:"https://www.youtube.com/watch?v=IxB_gduT1wM",
+#   topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
+# # Brand.create(name: "Squarespace", youtubeteaser_link:"https://www.youtube.com/watch?v=ksXQG-rLjZo",
+#   topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
+# # Brand.create(name: "Toyota",
+#   topsy_link:"http://topsy.com/s?q=Toyota&window=d",facebook_link: "https://www.facebook.com/toyota", spots: 1, seconds:60)
+# # Brand.create(name: "Volkswagen",
+#   topsy_link:"http://topsy.com/s?q=Volkswagen&window=d",facebook_link: "https://www.facebook.com/volkswagen", spots: 1, seconds:60)
+# # Brand.create(name: "Wonderfulpistachios",
+#   topsy_link:"http://topsy.com/s?q=Pistachios&window=d",facebook_link: "https://www.facebook.com/wonderfulpistachios", spots: 2, seconds:30)
 # https://www.youtube.com/watch?v=IxB_gduT1wM
 # http://youtu.be/IxB_gduT1wM
 
@@ -54,10 +54,10 @@
 # Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
 # Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
 ################################
-# Brand.find(28).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183020111811463721097_1390424113194&q=Bud+Light&mintime=1390337735&call_timestamp=1390424135360&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390424136116")
-# Brand.find(2).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183030369035387411714_1390415434804&q=Budweiser&call_timestamp=1390415435061&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390415435405")
-# Brand.find(30).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183012314851931296289_1390771605483&q=Audi&call_timestamp=1390771605649&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390771605901")
-# Brand.find(31).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18305334049856755883_1390771769364&q=Axe&mintime=1390685369&call_timestamp=1390771769430&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390771770025")
+Brand.find(31).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183020111811463721097_1390424113194&q=Bud+Light&mintime=1390337735&call_timestamp=1390424135360&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390424136116")
+# Brand.find(28).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183030369035387411714_1390415434804&q=Budweiser&call_timestamp=1390415435061&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390415435405")
+Brand.find(28).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183012314851931296289_1390771605483&q=Audi&call_timestamp=1390771605649&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390771605901")
+Brand.find(30).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18305334049856755883_1390771769364&q=Axe&mintime=1390685369&call_timestamp=1390771769430&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390771770025")
 # Brand.find(5).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18306463188682682812_1390772158421&q=Butterfinger&mintime=1390685758&call_timestamp=1390772158486&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390772159079")
 # Brand.find(6).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18309060917699243873_1390772716827&q=Cheerios&mintime=1390686317&call_timestamp=1390772716914&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390772717596")
 # Brand.find(34).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18301451637491118163_1390772801514&q=Chevrolet&mintime=1390686401&call_timestamp=1390772801570&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390772802094")
@@ -68,9 +68,9 @@
 # Brand.find(39).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18306943435582797974_1390772962593&q=%22H%26M%22&mintime=1390686563&call_timestamp=1390772962660&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390772964144")
 # #################1-5 are up to date
 
-Brand.find(ketchup).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18306972451729234308_1390773310157&q=Heinz+Ketchup&mintime=1390686910&call_timestamp=1390773310244&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773310929")
-Brand.find(car).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183032811143063008785_1390773364489&q=Hyundai&mintime=1390686964&call_timestamp=1390773364557&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773365312")
-Brand.find(intuit).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18304427013569511473_1390773406958&q=Intuit&call_timestamp=1390773407031&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773407212")
+# Brand.find(ketchup).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18306972451729234308_1390773310157&q=Heinz+Ketchup&mintime=1390686910&call_timestamp=1390773310244&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773310929")
+# Brand.find(car).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183032811143063008785_1390773364489&q=Hyundai&mintime=1390686964&call_timestamp=1390773364557&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773365312")
+# Brand.find(intuit).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18304427013569511473_1390773406958&q=Intuit&call_timestamp=1390773407031&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773407212")
 # Brand.find(tax).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery183020265832357108593_1390773997274&q=TurboTax&mintime=1390687598&call_timestamp=1390773997332&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390773998889")
 # Brand.find(jag).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18305153267723508179_1390774053834&q=Jaguar&mintime=1390687654&call_timestamp=1390774053889&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390774054689")
 # Brand.find(kia).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18309943869197741151_1390774233191&q=Kia&call_timestamp=1390774233310&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390774233527")

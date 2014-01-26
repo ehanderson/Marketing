@@ -21,26 +21,11 @@ class CheckinsController < ApplicationController
   end
 
   def new
-    driver = Selenium::WebDriver.for :firefox
     checkin_time = Time.now
     oauth_token = current_user.oauth_token
-      
-    Checkin.create_checkin(oauth_token, driver, checkin_time)
-    
-    # sleep(5700)
-    # driver = Selenium::WebDriver.for :firefox
-    @brands = []
-    @brands << Brand.find_by_name('Axe')
-    @brands << Brand.find_by_name('Audi')
-    @brands << Brand.find_by_name('Budweiser')
-     @brands.each do |brand|
-    puts  brand.name
-    end
+    Checkin.create_checkin(oauth_token, checkin_time)
     render :new
-      # driver.execute_script "window.onbeforeunload = function(e){};"
-      # driver.quit
   end
-
 
   def perform
     # driver = Selenium::WebDriver.for :firefox
