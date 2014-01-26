@@ -44,7 +44,7 @@ class CheckinsController < ApplicationController
       facebook_link = brand.facebook_link
       youtubeteaser_link = brand.youtubeteaser_link
       topsy_link = brand.topsy_link
-      Checkin.data_lookup( topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
+      Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
     end
     render :new
       # driver.execute_script "window.onbeforeunload = function(e){};"
