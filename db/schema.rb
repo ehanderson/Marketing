@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(:version => 20140125183145) do
     t.string   "youtube_teaser"
     t.string   "youtube_commercial"
     t.string   "sentiment_score"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
     t.string   "youtube_teaser_up"
     t.string   "youtube_teaser_down"
     t.string   "youtube_commercial_up"
     t.string   "youtube_commercial_down"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   create_table "users", :force => true do |t|
