@@ -34,7 +34,6 @@ class Checkin < ActiveRecord::Base
                       youtube_teaser: youtube_data[:teaser], sentiment_score: topsy_data,
                       youtube_teaser_up: youtube_data[:teaser_up], youtube_teaser_down: youtube_data[:teaser_down],
                       checkin_time: time)
-      binding.pry
     end
   end
 
