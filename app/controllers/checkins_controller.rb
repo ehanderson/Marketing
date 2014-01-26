@@ -20,36 +20,12 @@ class CheckinsController < ApplicationController
     redirect_to :show_checkin_data
   end
 
-  # def new
-  #   driver = Selenium::WebDriver.for :firefox
-  #   @brands = Brand.all
-  #   checkin = Time.now
-
-  #   @brands.each do |brand|
-  #     facebook_link = brand.facebook_link
-  #     youtubeteaser_link = brand.youtubeteaser_link
-  #     topsy_link = brand.topsy_link
-  #     Checkin.data_lookup(driver, topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
-  #   end
-  #   render :new
-  #     driver.execute_script "window.onbeforeunload = function(e){};"
-  #     driver.quit
-  # end
   def new
     driver = Selenium::WebDriver.for :firefox
-    brands = Brand.first(2)
     checkin_time = Time.now
     oauth_token = current_user.oauth_token
       
-    brands.each do |brand|
-      fb_data      = Checkin.get_facebook_data(oauth_token, brand.name)
-      topsy_data   = Checkin.topsy(driver, brand.topsy_link)
-      youtube_data = Checkin.youtubeteaser(brand.youtubeteaser_link)
-
-      Checkin.create!(brand_id: brand.id, talking: fb_data[:talking_about_count], likes: fb_data[:likes],
-                    youtube_teaser: youtube_data[:teaser], sentiment_score: topsy_data,
-                    youtube_teaser_up: youtube_data[:teaser_up], youtube_teaser_down: youtube_data[:teaser_down],
-                    checkin_time: Time.now)
+    Checkin.create_checkin(oauth_token, driver, checkin_time)
     
     # sleep(5700)
     # driver = Selenium::WebDriver.for :firefox
