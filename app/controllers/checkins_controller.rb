@@ -36,7 +36,8 @@ class CheckinsController < ApplicationController
   #     driver.quit
   # end
   def new
-    # driver = Selenium::WebDriver.for :firefox
+    # sleep(5700)
+    driver = Selenium::WebDriver.for :firefox
     @brands = Brand.all
     checkin = Time.now
 
@@ -44,11 +45,11 @@ class CheckinsController < ApplicationController
       facebook_link = brand.facebook_link
       youtubeteaser_link = brand.youtubeteaser_link
       topsy_link = brand.topsy_link
-      Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
+      Checkin.data_lookup(driver,topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
     end
     render :new
-      # driver.execute_script "window.onbeforeunload = function(e){};"
-      # driver.quit
+      driver.execute_script "window.onbeforeunload = function(e){};"
+      driver.quit
   end
 
 

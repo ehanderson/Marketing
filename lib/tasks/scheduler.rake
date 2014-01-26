@@ -10,6 +10,6 @@ task :this_task => :environment do
       youtubeteaser_link = brand.youtubeteaser_link
       topsy_link = brand.topsy_link
       Checkin.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand.id, checkin)
-  puts "done."
     end
+  puts "done."
 end

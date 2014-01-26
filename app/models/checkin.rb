@@ -20,30 +20,30 @@ class Checkin < ActiveRecord::Base
     @checkins = Checkin.order(:brand_id)
   end
 
-  def self.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand_id, checkin)
+  def self.data_lookup(driver,topsy_link, youtubeteaser_link, facebook_link, brand_id, checkin)
     self.youtubeteaser(youtubeteaser_link)
     self.facebook(facebook_link, brand_id)
-    # self.topsy(driver, topsy_link)
-    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-    #                 youtube_teaser: @teaser, sentiment_score: @sentiment_score,
-    #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
-    #                 checkin_time: checkin)
-puts @likes
+    self.topsy(driver, topsy_link)
     Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-                    youtube_teaser: @teaser,
+                    youtube_teaser: @teaser, sentiment_score: @sentiment_score,
                     youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
                     checkin_time: checkin)
+# puts @likes
+#     Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+#                     youtube_teaser: @teaser,
+#                     youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+#                     checkin_time: checkin)
   end
 
-  # def self.topsy(driver, topsy_link)
-  #  if topsy_link != nil
-  #     driver.navigate.to topsy_link
-  #     @sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
-  #   else
-  #     @sentiment_score = nil
-  #   end
-  #   @sentiment_score
-  # end
+  def self.topsy(driver, topsy_link)
+   if topsy_link != nil
+      driver.navigate.to topsy_link
+      @sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+    else
+      @sentiment_score = nil
+    end
+    @sentiment_score
+  end
 
   def self.youtubeteaser(youtubeteaser_link)
     if youtubeteaser_link != nil

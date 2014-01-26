@@ -24,8 +24,8 @@
 # Brand.create(name: "Dannon", topsy_link:"http://topsy.com/s?q=Okios&window=d",facebook_link: "https://www.facebook.com/dannon", spots: 1, seconds:30)
 # Brand.create(name: "AgeofextinctionMovie", topsy_link:"http://topsy.com/s?q=Transformers&window=d",facebook_link: "https://www.facebook.com/AgeofextinctionMovie", spots: 1, seconds:30)
 # Brand.create(name: "PepsiUS", topsy_link:"http://topsy.com/s?q=Pepsi&window=d",facebook_link: "https://www.facebook.com/PepsiUS", spots: 2, seconds:60)
-Brand.create(name: "SodaStream", youtubeteaser_link:"https://www.youtube.com/watch?v=IxB_gduT1wM", topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
-Brand.create(name: "Squarespace", youtubeteaser_link:"https://www.youtube.com/watch?v=ksXQG-rLjZo", topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
+# Brand.create(name: "SodaStream", youtubeteaser_link:"https://www.youtube.com/watch?v=IxB_gduT1wM", topsy_link:"http://topsy.com/s?q=SodaStream&window=d",facebook_link: "https://www.facebook.com/SodaStream", spots: 1, seconds:30)
+# Brand.create(name: "Squarespace", youtubeteaser_link:"https://www.youtube.com/watch?v=ksXQG-rLjZo", topsy_link:"http://topsy.com/s?q=SquareSpace&window=d",facebook_link: "https://www.facebook.com/squarespace", spots: 1, seconds:30)
 # Brand.create(name: "Toyota", topsy_link:"http://topsy.com/s?q=Toyota&window=d",facebook_link: "https://www.facebook.com/toyota", spots: 1, seconds:60)
 # Brand.create(name: "Volkswagen", topsy_link:"http://topsy.com/s?q=Volkswagen&window=d",facebook_link: "https://www.facebook.com/volkswagen", spots: 1, seconds:60)
 # Brand.create(name: "Wonderfulpistachios", topsy_link:"http://topsy.com/s?q=Pistachios&window=d",facebook_link: "https://www.facebook.com/wonderfulpistachios", spots: 2, seconds:30)
@@ -39,6 +39,7 @@ Brand.create(name: "Squarespace", youtubeteaser_link:"https://www.youtube.com/wa
 # ,facebook_link: "https://www.facebook.com/BudweiserUSA",
 # youtubeteaser_link:"", youtubecommercial_link: "",
 
-# Brand.find(50).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=IxB_gduT1wM")
-# Brand.find(17).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=RWBaF077yWI")
-# Brand.find(24).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=ksXQG-rLjZo")
+Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
+Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
+Brand.find(53).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=Mzio0qhdxZY")
+Brand.find(27).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=oKAG7UJ-NWk")
