@@ -81,7 +81,7 @@
 
 Brand.find(35).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18302470243233256042_1390778249017&q=Chobani&mintime=1390691850&call_timestamp=1390778249302&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390778250702")
 Brand.find(55).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18308578772926703095_1390776545156&q=SodaStream&mintime=1390690145&call_timestamp=1390776545240&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390776545811")
-Brand.find(48).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18305357249185908586_1390776583888&q=SquareSpace&mintime=1390690184&call_timestamp=1390776583961&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390776584395")
+Brand.find(58).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18305357249185908586_1390776583888&q=SquareSpace&mintime=1390690184&call_timestamp=1390776583961&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390776584395")
 Brand.find(27).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18303064065750222653_1390776733385&q=Pistachios&mintime=1390690333&call_timestamp=1390776733447&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390776733956")
 Brand.find(53).update_attributes(topsy_link: "http://otter.topsy.com/sentiment.js?callback=jQuery18306462873844429851_1390776655057&q=Volkswagen&mintime=1390690255&call_timestamp=1390776655112&apikey=09C43A9B270A470B8EB8F2946A9369F3&_=1390776655650")
 
