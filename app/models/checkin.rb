@@ -28,7 +28,7 @@ class Checkin < ActiveRecord::Base
     #                 youtube_teaser: @teaser, sentiment_score: @sentiment_score,
     #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
     #                 checkin_time: checkin)
-
+puts @likes
     Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
                     youtube_teaser: @teaser,
                     youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
