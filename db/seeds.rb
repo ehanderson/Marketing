@@ -41,5 +41,5 @@
 
 # Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
 # Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
-Brand.find(28).update_attributes(facebook_link: "https://www.facebook.com/BudLight", youtubeteaser_link:"https://www.youtube.com/watch?v=ffXmQhrjWV8")
-Brand.find(2).update_attributes(youtubeteaser_link: nil, facebook_link: "https://www.facebook.com/BudweiserUSA")
+Brand.find(1).update_attributes(facebook_link: nil, youtubeteaser_link:"https://www.youtube.com/watch?v=ffXmQhrjWV8")
+Brand.find(2).update_attributes(youtubeteaser_link: nil, facebook_link: "nil")

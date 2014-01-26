@@ -7,6 +7,9 @@ require 'nokogiri'
 require 'typhoeus'
 require 'selenium-webdriver'
 require 'clockwork'
+require 'net/http'
+require 'json'
+require 'httparty'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
