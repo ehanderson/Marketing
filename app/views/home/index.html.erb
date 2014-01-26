@@ -26,35 +26,6 @@
       <td>YouTube Teaser Down</td>
     </tr>
   </thead>
-  <tbody id="mostrecent">
-  <h2 class='helpertext'>Most Recent on top, Next in line below</h2>
-    <% @brands.each do |brand|%>
-    <tr>
-      <td><%=brand.name%></td>
-      <td><%=brand.checkins.last.checkin_time%></td>
-      <td><%=brand.checkins.last.likes%></td>
-      <td><%=brand.checkins.last.talking%></td>
-      <td><%=brand.checkins.last.sentiment_score%></td>
-      <td><%=brand.checkins.last.youtube_teaser%></td>
-      <td><%=brand.checkins.last.youtube_teaser_up || nil%></td>
-      <td><%=brand.checkins.last.youtube_teaser_down || nil%></td>
-    </tr>
-    <%end%>
-  </tbody>
-  <tbody id="secondlastrecent">
-    <% @brands.each do |brand|%>
-    <tr>
-      <td><%=brand.name%></td>
-      <td><%=brand.checkins[-2].checkin_time%></td>
-      <td><%=brand.checkins[-2].likes%></td>
-      <td><%=brand.checkins[-2].talking%></td>
-      <td><%=brand.checkins[-2].sentiment_score%></td>
-      <td><%=brand.checkins[-2].youtube_teaser%></td>
-      <td><%=brand.checkins[-2].youtube_teaser_up || nil %></td>
-      <td><%=brand.checkins[-2].youtube_teaser_down || nil %></td>
-    </tr>
-    <%end%>
-  </tbody>
 
 </table>
 
