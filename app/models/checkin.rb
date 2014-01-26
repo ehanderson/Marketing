@@ -20,45 +20,43 @@ class Checkin < ActiveRecord::Base
     @checkins = Checkin.order(:brand_id)
   end
 
-  def self.data_lookup(driver, topsy_link, youtubeteaser_link, facebook_link, brand_id, checkin)
+  def self.data_lookup(topsy_link, youtubeteaser_link, facebook_link, brand_id, checkin)
     self.youtubeteaser(youtubeteaser_link)
     self.facebook(facebook_link, brand_id)
-    self.topsy(driver, topsy_link)
-    Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-                    youtube_teaser: @teaser, sentiment_score: @sentiment_score,
-                    youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
-                    checkin_time: Time.now)
+    # self.topsy(driver, topsy_link)
+    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+    #                 youtube_teaser: @teaser, sentiment_score: @sentiment_score,
+    #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+    #                 checkin_time: checkin)
 
-        # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
-        #             youtube_teaser: @teaser,
-        #             checkin_time: checkin)
+    # Checkin.create(brand_id: brand_id, talking: @talking, likes: @likes,
+    #                 youtube_teaser: @teaser,
+    #                 youtube_teaser_up: @teaser_up, youtube_teaser_down: @teaser_down,
+    #                 checkin_time: checkin)
   end
 
-  def self.topsy(driver, topsy_link)
-   if topsy_link != nil
-      driver.navigate.to topsy_link
-      @sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
-    else
-      @sentiment_score = nil
-    end
-    @sentiment_score
-  end
+  # def self.topsy(driver, topsy_link)
+  #  if topsy_link != nil
+  #     driver.navigate.to topsy_link
+  #     @sentiment_score = driver.find_element(:class, 'sentiment-label').text.gsub(/[^0-9]/, "")
+  #   else
+  #     @sentiment_score = nil
+  #   end
+  #   @sentiment_score
+  # end
 
   def self.youtubeteaser(youtubeteaser_link)
     if youtubeteaser_link != nil
       page = Typhoeus::Request.get(youtubeteaser_link, :timeout => 5000)
       doc = Nokogiri::HTML.parse(page.body)
       @teaser_up = doc.css('.likes-count').text
-      @teaser_down = doc.css('.dislikes-count').text
+      @teaser_down = doc.css('.dislikes-count').text.gsub(/[^0-9]/, "")
       @teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
     else
      @teaser = nil
      @teaser_down = nil
      @teaser_up = nil
     end
-    puts @teaser
-    puts @teaser_down
-    puts @teaser_up
   end
 
   def self.facebook(facebook_link, brand_id)

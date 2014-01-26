@@ -15,7 +15,7 @@ gem 'typhoeus'
 # gem 'open-uri'
 # Gems used only for assets and not required
 # in production environments by default.
-
+gem 'omniauth'
 gem 'omniauth-facebook'
 
 group :assets do
