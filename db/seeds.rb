@@ -39,5 +39,6 @@
 # ,facebook_link: "https://www.facebook.com/BudweiserUSA",
 # youtubeteaser_link:"", youtubecommercial_link: "",
 
-# Brand.find(3).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=giCRmjrfLMY")
+# Brand.find(50).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=IxB_gduT1wM")
 Brand.find(17).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=RWBaF077yWI")
+# Brand.find(24).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=ksXQG-rLjZo")

@@ -49,7 +49,7 @@ class Checkin < ActiveRecord::Base
     if youtubeteaser_link != nil
       page = Typhoeus::Request.get(youtubeteaser_link, :timeout => 5000)
       doc = Nokogiri::HTML.parse(page.body)
-      @teaser_up = doc.css('.likes-count').text
+      @teaser_up = doc.css('.likes-count').text.gsub(/[^0-9]/, "")
       @teaser_down = doc.css('.dislikes-count').text.gsub(/[^0-9]/, "")
       @teaser = doc.css(".watch-view-count").text.gsub(/[^0-9]/, "")
     else
@@ -82,7 +82,7 @@ class Checkin < ActiveRecord::Base
       talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+\d+\W+)talking/)
     end
     if talking.empty?
-      talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+)talking/).first.first.gsub(/[^0-9]/, "")
+      talking = doc.css('meta')[4].attributes["content"].value.scan(/(\d+\W+)talking/)
     end
     @talking = talking.first.first.gsub(/[^0-9]/, "")
   end

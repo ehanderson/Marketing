@@ -2,6 +2,7 @@ class CheckinsController < ApplicationController
 
   def show_all
     @brands = Brand.order(:name)
+    @checkins = Checkin.all
   end
 
   def data
