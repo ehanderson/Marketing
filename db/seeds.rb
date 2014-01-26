@@ -41,5 +41,5 @@
 
 # Brand.find(11).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=WycoJMKzXZ4")
 # Brand.find(19).update_attribute(:youtubeteaser_link, "https://www.youtube.com/watch?v=sNr1a-k3bwk")
-Brand.find(28).update_attribute(:youtubeteaser_link, "https://www.facebook.com/BudLight")
+Brand.find(1).update_attribute(:youtubeteaser_link, "https://www.facebook.com/BudLight")
 Brand.find(2).update_attribute(:youtubeteaser_link, "https://www.facebook.com/BudweiserUSA")
