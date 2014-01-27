@@ -25,7 +25,7 @@ class CheckinsController < ApplicationController
       checkin_time = Time.now
       oauth_token = current_user.oauth_token
       Checkin.create_checkin(oauth_token, checkin_time)
-      render :new
+      redirect_to ('/'), notice: 'Manual Checkin Complete'
     else
       redirect_to ('/'), notice: 'Please Sign in with Facebook First'
     end
