@@ -9,6 +9,9 @@
 <body>
 
 <div id="user-nav">
+  <div id="home-link">
+    <%= link_to "Home", root_path, id: "home" %>
+  </div>
   <div id="fb-link">
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
