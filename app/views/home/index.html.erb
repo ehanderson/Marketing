@@ -1,6 +1,8 @@
-<%=link_to "new checkin task", new_checkin_path%>
-<%=link_to "view brand data", show_brand_data_path%>
-<%=link_to "view checkin data", show_checkin_data_path%>
+<div class="mainLinks">
+  <%=link_to "Manually Run Checkin Update", new_checkin_path, {class: "buttonTo"}%>
+  <%=link_to "Brand Information", show_brand_data_path, {class: "buttonTo"}%>
+  <%=link_to "Checkin History", show_checkin_data_path, {class: "buttonTo"} %>
+</div>
 <br>
 
 <div class='downloads'>
@@ -12,8 +14,9 @@
   <%= link_to "CSV", checkin_data_path(format: "csv") %>
   <%= link_to "Excel", checkin_data_path(format: "xls") %>
 </div>
-
-<table>
+<div id="tableInformation">
+<h1>Two Most Recent Collections:</h1>
+<table class="table" id="homeDisplay">
   <thead>
     <tr>
       <td>Name</td>
@@ -27,7 +30,6 @@
     </tr>
   </thead>
   <tbody id="mostrecent">
-  <h2 class='helpertext'>Most Recent on top, Next in line below</h2>
 
     <% @brands.each do |brand|%>
     <tr>
@@ -35,7 +37,7 @@
       <td><%=brand.checkins.last.checkin_time%></td>
       <td><%=brand.checkins.last.likes%></td>
       <td><%=brand.checkins.last.talking%></td>
-      <td><%=brand.checkins.last.sentiment_score%></td>
+      <td><%=brand.checkins.last.sentiment_score.first(2)%></td>
       <td><%=brand.checkins.last.youtube_teaser%></td>
       <td><%=brand.checkins.last.youtube_teaser_up%></td>
       <td><%=brand.checkins.last.youtube_teaser_down%></td>
@@ -59,5 +61,5 @@
   </tbody>
 
 </table>
-
+</div>
 

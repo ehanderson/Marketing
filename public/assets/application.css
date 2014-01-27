@@ -1,1 +1,57 @@
-tbody tr:last-child td{border-bottom:4px solid black}.downloads p{display:inline}#table-header{background:#D0D0D0}#user-nav{background-color:gray;height:100px;border:2px solid black;border-radius:5px;width:25%;position:relative}#fb-link{position:absolute;top:33%;width:100%;text-align:center;font-size:25px;color:white}#fb-link a{text-decoration:none;color:white;font-size:25px}#fb-link a:hover{font-weight:bold}
+tbody tr:last-child td{border-bottom:4px solid black}
+.downloads p{display:inline}
+#table-header{background:#D0D0D0}
+#fb-button{
+  background-color:gray;
+  height:100px;
+  border:2px solid black;
+  border-radius:5px;
+  width:25%;
+  position:relative
+}
+#fb-link{
+  position:absolute;
+  top:33%;
+  width:100%;
+  text-align:center;
+  font-size:25px;
+  color:white
+}
+#fb-link a{
+  text-decoration:none;
+  color:white;
+  font-size:25px
+}
+#fb-link a:hover{
+  font-weight:bold
+}
+.buttonTo{
+      font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+#tableInformation{
+  margin-left: 5%;
+  margin-right:5%;
+}
+.table{
+  border:3px solid;
+}
+.table td{
+  text-align: center;
+  vertical-align: middle;
+}
+.table thead td{
+  border-bottom: 2px solid;
+  background-color: #D0D0D0
+}
+body{
+  margin-left: 5%;
+  margin-right: 5%;
+}
