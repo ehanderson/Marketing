@@ -22,14 +22,11 @@ class Checkin < ActiveRecord::Base
 
   def self.create_checkin(oauth_token, time)
     # brands = [Brand.find_by_name('Axe'), Brand.find_by_name('Audi'), Brand.find_by_name('Bud Light')]
-
     brands = Brand.all
-
     brands.each do |brand|
       fb_data      = Checkin.get_facebook_data(oauth_token, brand.name)
       topsy_data   = Checkin.topsy(brand.topsy_link)
       youtube_data = Checkin.youtubeteaser(brand.youtubeteaser_link)
-
       Checkin.create!(brand_id: brand.id, talking: fb_data[:talking_about_count], likes: fb_data[:likes],
                       youtube_teaser: youtube_data[:teaser], sentiment_score: topsy_data,
                       youtube_teaser_up: youtube_data[:teaser_up], youtube_teaser_down: youtube_data[:teaser_down],

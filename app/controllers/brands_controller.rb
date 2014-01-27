@@ -20,4 +20,14 @@ class BrandsController < ApplicationController
     redirect_to :show_brand_data
   end
 
+  # def update
+  #   brand = Brand.find(params[:id])
+  #   brand.update_attributes(youtubecommercial_link: params[:youtubecommercial_link],
+  #                           youtubeteaser_link: params[:youtubeteaser_link])
+
+  #   redirect_to :show_brand_data
+
+  end
+
+
 end
