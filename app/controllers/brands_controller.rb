@@ -20,7 +20,9 @@ class BrandsController < ApplicationController
     redirect_to :show_brand_data
   end
 
-
+  def edit
+    @brand = Brand.find(params[:id])
+  end
 
 
 end
