@@ -11,13 +11,13 @@
     <%= f.text_field :name,
                      :placeholder => "BrandName" %>
   </div><br>
-    <div class="field", id="edit-facebook-link">
+    <div class="field", id="editFacebookLink">
     <%= f.label :facebook_link %><br />
     <%= f.text_field :facebook_link,
                       :value => "https://facebook.com/#{@brand.name}",
                       :readonly => true %>
   </div><br>
-  <div class="field", id="edit-topsy-link">
+  <div class="field", id="editTopsyLink">
     <%= f.label :topsy_link %><br />
     <%= f.text_field :topsy_link,
                      :readonly => true %>
