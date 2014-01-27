@@ -21,4 +21,5 @@ class Brand < ActiveRecord::Base
     end
   end
 
+
 end
