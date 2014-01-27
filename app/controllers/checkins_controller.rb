@@ -27,7 +27,7 @@ class CheckinsController < ApplicationController
     puts oauth_token
 
     Checkin.create_checkin(oauth_token, checkin_time)
-    redirect_to :root_path
+    render :new
   end
 
   def perform
