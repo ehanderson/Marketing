@@ -20,7 +20,7 @@ class Checkin < ActiveRecord::Base
     @checkins = Checkin.order(:brand_id)
   end
 
-  def self.create_checkin( time)
+  def self.create_checkin(oauth_token, time)
     brands = Brand.all
     brands.each do |brand|
       fb_data         = Checkin.get_facebook_data(oauth_token, brand.name)
