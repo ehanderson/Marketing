@@ -23,9 +23,11 @@ class CheckinsController < ApplicationController
   def new
     checkin_time = Time.now
     oauth_token = current_user.oauth_token
+    puts "this is my oauth token bitches"
     puts oauth_token
+
     Checkin.create_checkin(oauth_token, checkin_time)
-    render :new
+    redirect_to :root_path
   end
 
   def perform
