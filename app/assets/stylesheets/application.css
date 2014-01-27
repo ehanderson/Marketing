@@ -15,9 +15,6 @@
   width: 80%;
 }
 
-tbody tr:last-child td {
-    border-bottom: 4px solid black;
-}
 
 .downloads p{
   display: inline;
