@@ -21,10 +21,14 @@ class CheckinsController < ApplicationController
   end
 
   def new
-    checkin_time = Time.now
-    oauth_token = current_user.oauth_token
-    Checkin.create_checkin(oauth_token, checkin_time)
-    render :new
+    if current_user
+      checkin_time = Time.now
+      oauth_token = current_user.oauth_token
+      Checkin.create_checkin(oauth_token, checkin_time)
+      render :new
+    else
+      redirect_to ('/'), notice: 'Please Sign in with Facebook First'
+    end
   end
 
 end
