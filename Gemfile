@@ -13,6 +13,7 @@ gem 'selenium-webdriver'
 # gem 'mechanize'
 # gem 'poltergeist'
 gem 'typhoeus'
+# gem 'sass'
 # gem 'open-uri'
 # Gems used only for assets and not required
 # in production environments by default.

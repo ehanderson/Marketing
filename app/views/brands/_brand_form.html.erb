@@ -1,8 +1,32 @@
 <div >
 <%= form_for(@brand) do |f| %>
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <%= f.label :facebook_link %><br />
+    <%= f.text_field :facebook_link %>
+  </div>
+  <div class="field">
     <%= f.label :youtubeteaser_link %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :youtubeteaser_link %>
+  </div>
+  <div class="field">
+    <%= f.label :youtubecommercial_link %><br />
+    <%= f.text_field :youtubecommercial_link %>
+  </div>
+  <div class="field">
+    <%= f.label :topsy_link %><br />
+    <%= f.text_field :topsy_link %>
+  </div>
+    <div class="field">
+    <%= f.label :commercial_length_seconds %><br />
+    <%= f.text_field :seconds %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_commercial_spots %><br />
+    <%= f.text_field :spots %>
   </div>
 <% end %>
 </div>
