@@ -24,5 +24,12 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
   end
 
+  def update
+    brand = Brand.find(params[:id])
+
+    brand.update_attributes(params[:brand])
+    redirect_to :show_brand_data
+  end
+
 
 end
