@@ -9,6 +9,6 @@ task :this_task => :environment do
     puts oauth_token
 
     Checkin.create_checkin(oauth_token, checkin_time)
-    end
+    # end
   puts "done."
 end
