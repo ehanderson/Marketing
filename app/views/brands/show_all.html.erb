@@ -1,5 +1,4 @@
-<p>Sup</p>
-
+<td><%= link_to 'New', new_brand_path %></td>
 <table id="table-bro">
   <tr id="table-header">
   <% Brand.column_names.each do |col| %>
@@ -13,7 +12,7 @@
       <% Brand.column_names.each do |col| %>
         <td><%= brand.attributes.values_at(col) %></td>
       <% end %>
-        <td><%= button_to "delete", brand, :method => :delete %></td>
+        <td><%= button_to "Delete", brand, :method => :delete %></td>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
 
     </tr>

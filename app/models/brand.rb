@@ -5,6 +5,7 @@ class Brand < ActiveRecord::Base
 
   has_many :checkins
   before_update :empty_fields
+  before_save :empty_fields
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|

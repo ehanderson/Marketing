@@ -39,10 +39,14 @@ class Checkin < ActiveRecord::Base
   end
 
   def self.topsy(topsy_link)
-    response = HTTParty.get(topsy_link).body
-    matched_data = response.match(/({"request".*}[^);])/).to_s
-    hash = JSON.parse(matched_data)
-    sentiment_score = hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
+    if topsy_link != nil
+      response = HTTParty.get(topsy_link).body
+      matched_data = response.match(/({"request".*}[^);])/).to_s
+      hash = JSON.parse(matched_data)
+      sentiment_score = hash["response"]["results"][1]["stats"]["average"]["sentiment_score"]
+    else
+      sentiment_score = nil
+    end
   end
 
   def self.youtubeteaser(youtubeteaser_link)
@@ -90,7 +94,6 @@ class Checkin < ActiveRecord::Base
     info = graph.get_object(brand)
     collection[:likes] = info["likes"]
     collection[:talking_about_count] = info["talking_about_count"]
-    collection
   end
 
 end

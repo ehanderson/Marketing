@@ -38,16 +38,18 @@
     <% @brands.each do |brand|%>
     <tr>
       <td><%=brand.name%></td>
-      <td><%=brand.checkins.last.checkin_time%></td>
-      <td><%=brand.checkins.last.likes%></td>
-      <td><%=brand.checkins.last.talking%></td>
-      <td><%=brand.checkins.last.sentiment_score.first(2)%></td>
-      <td><%=brand.checkins.last.youtube_teaser%></td>
-      <td><%=brand.checkins.last.youtube_teaser_up%></td>
-      <td><%=brand.checkins.last.youtube_teaser_down%></td>
-      <td><%=brand.checkins.last.youtube_commercial%></td>
-      <td><%=brand.checkins.last.youtube_commercial_up%></td>
-      <td><%=brand.checkins.last.youtube_commercial_down%></td>
+      <%if brand.checkins.last %>
+        <td><%=brand.checkins.last.checkin_time%></td>
+        <td><%=brand.checkins.last.likes%></td>
+        <td><%=brand.checkins.last.talking%></td>
+        <td><%=brand.checkins.last.sentiment_score.first(2)%></td>
+        <td><%=brand.checkins.last.youtube_teaser%></td>
+        <td><%=brand.checkins.last.youtube_teaser_up%></td>
+        <td><%=brand.checkins.last.youtube_teaser_down%></td>
+        <td><%=brand.checkins.last.youtube_commercial%></td>
+        <td><%=brand.checkins.last.youtube_commercial_up%></td>
+        <td><%=brand.checkins.last.youtube_commercial_down%></td>
+      <%end%>
     </tr>
     <%end%>
   </tbody>
@@ -55,6 +57,7 @@
     <% @brands.each do |brand|%>
     <tr>
       <td><%=brand.name%></td>
+         <%if brand.checkins[-2] %>
       <td><%=brand.checkins[-2].checkin_time%></td>
       <td><%=brand.checkins[-2].likes%></td>
       <td><%=brand.checkins[-2].talking%></td>
@@ -67,6 +70,7 @@
       <td><%=brand.checkins[-2].youtube_commercial_down%></td>
 
     </tr>
+    <%end%>
     <%end%>
   </tbody>
 

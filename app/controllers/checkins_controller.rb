@@ -1,4 +1,4 @@
-class CheckinsController < ApplicationController
+  class CheckinsController < ApplicationController
 
   def show_all
     @brands = Brand.order(:name)

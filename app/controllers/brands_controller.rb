@@ -30,6 +30,13 @@ class BrandsController < ApplicationController
     brand.update_attributes(params[:brand])
     redirect_to :show_brand_data
   end
-
+  def new
+    @brand = Brand.new
+    render :new
+  end
+  def create
+    @brand = Brand.create(params[:brand])
+   redirect_to :show_brand_data
+  end
 
 end

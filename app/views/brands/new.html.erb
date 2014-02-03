@@ -1,0 +1,40 @@
+<%= form_for(@brand) do |f| %>
+  <div class="field">
+    <%= f.label :brand_name %><br />
+    <%= f.text_field :name,
+                     :placeholder => "BrandName" %>
+  </div><br>
+    <div class="field", id="editFacebookLink">
+    <%= f.label :facebook_link %><br />
+    <%= f.text_field :facebook_link,
+                      :readonly => true %>
+  </div><br>
+  <div class="field", id="editTopsyLink">
+    <%= f.label :topsy_link %><br />
+    <%= f.text_field :topsy_link,
+                     :readonly => true %>
+  </div><br>
+  <div class="field">
+    <%= f.label :youtubeteaser_link %><br />
+    <%= f.text_field :youtubeteaser_link,
+                     :placeholder => "http://www.youtube.com/brandteaserlink" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :youtubecommercial_link %><br />
+    <%= f.text_field :youtubecommercial_link,
+                     :placeholder => "http://www.youtube.com/brandcommerciallink" %>
+  </div><br>
+    <div class="field">
+    <%= f.label :commercial_length_seconds %><br />
+    <%= f.text_field :seconds,
+                     :placeholder => "# in seconds" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :number_of_commercial_spots %><br />
+    <%= f.text_field :spots,
+                     :placeholder => "# of spots" %>
+  </div><br>
+    <div class="actions">
+    <%= f.submit "New"%>
+  </div>
+<% end %>
