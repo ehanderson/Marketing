@@ -94,6 +94,7 @@ class Checkin < ActiveRecord::Base
     info = graph.get_object(brand)
     collection[:likes] = info["likes"]
     collection[:talking_about_count] = info["talking_about_count"]
+    collection
   end
 
 end

@@ -6,7 +6,9 @@
   </div><br>
     <div class="field", id="editFacebookLink">
     <%= f.label :facebook_link %><br />
-    <%= f.text_field :facebook_link%>
+    <%= f.text_field :facebook_link,
+                      :value => "https://facebook.com/#{@brand.name}",
+                      :readonly => true %>
   </div><br>
   <div class="field", id="editTopsyLink">
     <%= f.label :topsy_link %><br />
