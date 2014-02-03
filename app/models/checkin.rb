@@ -47,6 +47,7 @@ class Checkin < ActiveRecord::Base
     else
       sentiment_score = nil
     end
+    sentiment_score
   end
 
   def self.youtubeteaser(youtubeteaser_link)
